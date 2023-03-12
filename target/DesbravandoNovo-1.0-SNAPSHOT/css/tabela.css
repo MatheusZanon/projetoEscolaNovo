@@ -1,0 +1,180 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 12 de mar. de 2023, 17:29:16
+    Author     : joaop
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Didot', serif;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: #fff;
+    --text-color-branca: rgb(255, 255, 255);
+    --text-color-zinza: #555;
+    --title-color-preta: #000;
+    --title-color-verde: #168945;
+}
+.main{
+    margin:100px;
+}
+
+.cabecalho {
+    padding: 10px;
+    background-color: #2ba9fc;
+    min-height: 100px;
+}
+.cabecalho .detalhes {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 1px;
+    margin: 5px;
+    margin-top: 2px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+
+}
+
+.cabecalho .enfeite {
+    height: 6%;
+    width: 6%;
+    margin-left:10%;
+    margin-right: 10%;
+}
+
+.cabecalho h1 {
+
+    text-align: center;
+    font-size: 400%;
+    font-family: 'Didot', serif;
+    font-weight: bold;
+    color: var(--text-color-branca);
+    padding-top: 25px;
+   
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+
+
+.menu {
+    margin-top:5%;
+    margin: 10px 200px;
+    border-bottom: 1px solid #2ba9fc;
+
+}
+
+
+.menu ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+
+
+}
+
+.menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--title-color-preta);
+    letter-spacing: 0.1rem;
+    font-weight: 900;
+    font-size: 15px;
+    outline: none;
+    padding: 10px;
+
+
+}
+
+.menu a:hover {
+    color: #1db95c;
+    transition: all 0.2s;
+    border-bottom: white solid 0.11rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+
+}
+
+
+nav ul {
+    width: 100%;
+    text-align: right;
+    list-style: none;
+    margin-right: 50px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--title-color-preta);
+    font-weight: 500;
+
+}
+
+.tabela-alunos-cadastrados{
+    font-family: 'Didot',serif;
+    margin: 55px auto;
+    align-items: center;
+    border: 1px solid silver;
+   
+}
+
+.tabela-alunos-cadastrados caption{
+    font-size: 25px;
+    font-family: 'Didot',serif;
+    font-weight: bold;
+    padding: 20px;
+    align-items: center;
+    border-top: 1px solid silver;
+    border-left: 1px solid silver;
+    border-right: 1px solid silver;
+    text-transform: uppercase;
+    background-color:#2ba9fc;
+    color:var(--text-color-branca);
+ 
+}
+.tabela-alunos-cadastrados th{
+    font-family: serif;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.7;
+    text-transform: uppercase;
+    color: var(--title-color-preta);
+    letter-spacing: 0.2rem;
+    font-weight: 900;
+    outline: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+  
+    border-bottom: 0.5px solid silver;
+}
+tbody{
+     font-family: 'Didot', serif;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    line-height: 1.7;
+    letter-spacing: 0.1rem;
+    outline: none;
+    padding: 10px;
+    height: 5px;
+     font-weight: 520;
+
+}
+
