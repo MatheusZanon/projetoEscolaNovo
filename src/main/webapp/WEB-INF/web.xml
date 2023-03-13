@@ -8,6 +8,10 @@
         <servlet-name>DisciplinaSrv</servlet-name>
         <servlet-class>controller.DisciplinaSrv</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfessorSrv</servlet-name>
+        <servlet-class>controller.ProfessorSrv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CorpoCelesteSrv</servlet-name>
         <url-pattern>/CorpoCelesteSrv</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>DisciplinaSrv</servlet-name>
         <url-pattern>/DisciplinaSrv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfessorSrv</servlet-name>
+        <url-pattern>/ProfessorSrv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

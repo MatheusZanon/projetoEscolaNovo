@@ -8,6 +8,3 @@ package model.dao;
  *
  * @author Roni
  */
-public class DisciplinaDaoJpa implements InterfaceDao<Disciplina>{
-    
-}

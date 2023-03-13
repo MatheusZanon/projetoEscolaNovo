@@ -13,6 +13,10 @@ public class DaoFactory {
     public static RegistroDaoJpa novoRegistroDAO() throws Exception {
          return new RegistroDaoJpa();
     }
+    
+    public static ProfessorDaoJpa novoProfessorDAO() throws Exception {
+         return new ProfessorDaoJpa();
+    }
 
 
 }

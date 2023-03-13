@@ -21,3 +21,5 @@ public interface InterfaceDao<Registro> {
     public abstract List<Registro> listar() throws Exception;
     
 }
+
+
