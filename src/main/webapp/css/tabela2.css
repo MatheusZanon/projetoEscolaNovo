@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 12 de mar. de 2023, 17:29:16
+    Created on : 13 de mar. de 2023, 00:11:49
     Author     : joaop
 */
 
@@ -27,11 +27,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .cabecalho {
+
     padding: 10px;
     background-color: #2ba9fc;
     min-height: 100px;
 }
 .cabecalho .detalhes {
+    margin-top:2%;
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -43,12 +45,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 }
 
-.cabecalho .enfeites {
-   
-    margin-left:5%;
-    margin-top:2%;
- 
+.cabecalho .enfeite {
+
+    width:auto;
+    height:150px;
+    margin-left:10%;
+    margin-right: 10%;
 }
+
 
 .cabecalho h1 {
 
@@ -58,19 +62,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     font-weight: bold;
     color: var(--text-color-branca);
     padding-top: 25px;
-    margin-top:5%;
-   
+    margin-top:1%;
+
 }
-
-/*-----------------------------------------------------------------------------------*/
-
-
 
 .menu {
     margin-top:5%;
     margin: 10px 200px;
     border-bottom: 1px solid #2ba9fc;
-
 }
 
 
@@ -78,8 +77,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     display: flex;
     justify-content: space-evenly;
     padding: 1rem;
-
-
 }
 
 .menu a {
@@ -91,8 +88,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     font-size: 15px;
     outline: none;
     padding: 10px;
-
-
 }
 
 .menu a:hover {
@@ -104,7 +99,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 nav {
     display: flex;
     align-items: center;
-
 }
 
 
@@ -124,23 +118,21 @@ nav ul li a {
     text-decoration: none;
     color: var(--title-color-preta);
     font-weight: 500;
-
 }
-
 
 .tabela-alunos-cadastrados{
     font-family: 'Didot',serif;
     margin: 55px auto;
     align-items: center;
     border: 1px solid silver;
-   
+
 }
 
 .tabela-alunos-cadastrados caption{
     font-size: 25px;
     font-family: 'Didot',serif;
     font-weight: bold;
-    padding: 30px;
+    padding: 20px;
     align-items: center;
     border-top: 1px solid silver;
     border-left: 1px solid silver;
@@ -148,7 +140,7 @@ nav ul li a {
     text-transform: uppercase;
     background-color:#2ba9fc;
     color:var(--text-color-branca);
- 
+
 }
 .tabela-alunos-cadastrados th{
     font-family: serif;
@@ -157,6 +149,7 @@ nav ul li a {
     text-decoration: none;
     line-height: 1.7;
     text-transform: uppercase;
+    color: var(--title-color-preta);
     letter-spacing: 0.2rem;
     font-weight: 900;
     outline: none;
@@ -165,7 +158,7 @@ nav ul li a {
     border-bottom: 0.5px solid silver;
 }
 tbody{
-     font-family: 'Didot', serif;
+    font-family: 'Didot', serif;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -174,7 +167,6 @@ tbody{
     outline: none;
     padding: 10px;
     height: 5px;
-     font-weight: 520;
-
+    font-weight: 520;
 }
 

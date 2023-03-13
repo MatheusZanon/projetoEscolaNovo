@@ -13,7 +13,8 @@
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/tabela.css">
+        <link rel="stylesheet" a href="css/tabela2.css">
+
         <title>Professores Cadastrados</title>
     </head>
     <body>
@@ -21,21 +22,22 @@
             <!--Criando um cabeçalho------------------------------------------------------------------------>
             <header class="cabecalho">
                 <div class="detalhes">
-                    <img src="imagem/go-to-school.png" alt="go-to-school" class="enfeite"/>
+                    <img src="imagem/language.png" alt="language" class="enfeite"/>
+
                     <h1>Cadastros</h1>
-                    <img src="imagem/scary.png" alt="scary" class="enfeite"/>
+                    <img src="imagem/online-learning.png" alt="online-learning"  class="enfeite"/>
 
                 </div>
             </header>
-               <main class="assunto">
-            <nav class="menu">
-                <ul>
-                      <li><a href="FormularioRegistroProfessor.jsp">Formulário de Cadastro</a></li>  
-                    <li><a href="index.html">Tela Principal</a></li>
-                       
-                </ul>
-            </nav>
-               </main>
+            <main class="assunto">
+                <nav class="menu">
+                    <ul>
+                        <li><a href="FormularioRegistroProfessor.jsp">Formulário de Cadastro</a></li>  
+                        <li><a href="index.html">Tela Principal</a></li>
+
+                    </ul>
+                </nav>
+            </main>
 
             <section class="principal">
                 <table class="tabela-alunos-cadastrados">
@@ -47,7 +49,7 @@
                         <th>Endereço</th>
                         <th>Telefone</th>
                         <th>Estado Civil</th>
-                        
+
                     </tr>
 
                     <tbody> 
@@ -55,9 +57,9 @@
                         <%=listaHTML%>
                     </tbody>
                 </table>
-                  
+
             </section>
 
-        <main>
-    </body>
-</html>
+            <main>
+                </body>
+                </html>

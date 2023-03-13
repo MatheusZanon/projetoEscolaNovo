@@ -4,8 +4,12 @@
  */
 package model.dao;
 
+import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.Query;
 import model.Registros;
 
 
@@ -88,6 +92,22 @@ public class RegistroDaoJpa implements InterfaceDao<Registros>{
       }
       return r1;
     }
+    
+    @Override
+    public List<Registros> filtragem(String filtro) throws Exception {
+        List<Registros> lista = null;
+        EntityManager em = ConnFactory.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            lista = em.createQuery("FROM Registros WHERE nomeAluno LIKE '%" + filtro + "%'").getResultList();
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return lista;
+    }
+    
+    
 
     @Override
     public List<Registros> listar() throws Exception {

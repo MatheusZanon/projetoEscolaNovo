@@ -110,5 +110,15 @@ public class ProfessorDaoJpa implements InterfaceDao<Professores>{
         }
         return lista;
     }
+
+    
+    public List<Professores> pesquisar(String string) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<Professores> filtragem(String string) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

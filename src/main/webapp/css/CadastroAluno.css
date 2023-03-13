@@ -1,0 +1,28 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 13 de mar. de 2023, 00:25:41
+    Author     : joaop
+*/
+
+h3{
+     text-align: center;
+    color: #00afef;
+    margin-top: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+    font-family: Optima;
+    margin-bottom: 0.5%;
+}
+
+label{
+    margin-top: 10px;
+    margin-left:41%;
+}
+input{
+     margin-left:41%;
+}

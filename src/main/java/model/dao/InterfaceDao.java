@@ -17,6 +17,8 @@ public interface InterfaceDao<Registro> {
     public abstract void excluir(Registro entidade) throws Exception;
 
     public abstract Registro pesquisarPorId(int id) throws Exception;
+    
+    public abstract List<Registro> filtragem(String filtro) throws Exception;
 
     public abstract List<Registro> listar() throws Exception;
     

@@ -49,6 +49,7 @@ public class CorpoCelesteSrv extends HttpServlet {
             String telefone = request.getParameter("telefone");
             String nomeMae = request.getParameter("nomeMae");
             String nomePai = request.getParameter("nomePai");
+            String buscarNome = request.getParameter("filtro");
            
 
             /*
@@ -139,6 +140,11 @@ public class CorpoCelesteSrv extends HttpServlet {
                     rd = request.getRequestDispatcher("Listagem.jsp?lista="+listagem());
                     rd.forward(request,response);
                     break;
+                    
+               case "filtrar":
+                    rd = request.getRequestDispatcher("Listagem.jsp?lista=" + filtrar(buscarNome));
+                    rd.forward(request, response);
+                    break;
 
             }
         } catch (Exception ex) {
@@ -154,6 +160,42 @@ public class CorpoCelesteSrv extends HttpServlet {
     
     
     */
+    
+    private String filtrar(String nome) {
+        InterfaceDao dao = new RegistroDaoJpa();
+        List<Registros> lista = null;
+        try {
+            lista = dao.filtragem(nome);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        String listaHTML = "";
+        for (Registros aluno : lista) {
+             listaHTML = listaHTML
+                    + "<tr>"
+                    + "<td>" + aluno.getNomeAluno()     + "</td>"
+                    + "<td>" + aluno.getDt_nascimento()    + "</td>"
+                    + "<td>" + aluno.getNaturalidade() + "</td>"
+                    + "<td>" + aluno.getEndereco()     + "</td>"
+                    + "<td>" + aluno.getTelefone()    + "</td>"
+                    + "<td>" + aluno.getNomeMae() + "</td>"
+                    + "<td>" + aluno.getNomePai()    + "</td>"
+                        + "<td><form action=CorpoCelesteSrv?acao=pre-edicao method='POST'>"
+                    + "<input type='hidden' name='id'  value=" + 
+                        aluno.getId() + "><input type='submit' value=editar>"
+                    + "</form></td>"
+                    
+                    + "<form action=CorpoCelesteSrv?acao=exclusao method='POST'>"
+                    + "<td><input type='hidden'  name='id' value=" + 
+                        aluno.getId() + "><input type='submit' value=excluir>"
+                    + "</form></td>"
+                    
+                  
+                    + "</tr>";
+        }
+        return listaHTML;
+    }
+    
     
      private String listagem() {
         InterfaceDao dao = new RegistroDaoJpa();
@@ -190,6 +232,8 @@ public class CorpoCelesteSrv extends HttpServlet {
         return listaHTML;
     }
     
+     
+      
     
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

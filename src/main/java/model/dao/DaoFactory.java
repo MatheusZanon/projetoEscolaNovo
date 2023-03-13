@@ -9,14 +9,15 @@ package model.dao;
  * O Nosso DaoFactory criará um novo registro Dao JPA
  */
 public class DaoFactory {
- 
+
     public static RegistroDaoJpa novoRegistroDAO() throws Exception {
-         return new RegistroDaoJpa();
+        return new RegistroDaoJpa();
     }
-    
+
     public static ProfessorDaoJpa novoProfessorDAO() throws Exception {
-         return new ProfessorDaoJpa();
+        return new ProfessorDaoJpa();
     }
+
 
 
 }

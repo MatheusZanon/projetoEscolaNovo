@@ -4,18 +4,25 @@
  */
 package model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author annak
  */
 @Entity
-public class Registros {
+//@NamedQuery(name="Registros.findAll", query="Select nomeAluno from Registros")
+//@NamedQuery(name="Registros.cadastrados", query="from registros r1")
+public class Registros implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +42,9 @@ public class Registros {
     private String nomeMae;
     @Column(length = 130, nullable = false)
     private String nomePai;
-   
+    
+    //@ManyToMany
+   // private Collection<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
     public Registros() {
     }
@@ -49,6 +58,10 @@ public class Registros {
         this.nomeMae = nomeMae;
         this.nomePai = nomePai;
     }
+
+  
+    
+    
 
     public int getId() {
         return id;
@@ -114,11 +127,14 @@ public class Registros {
         this.nomePai = nomePai;
     }
 
-    @Override
-    public String toString() {
-        return "Registros{" + "id=" + id + ", nomeAluno=" + nomeAluno + ", dt_nascimento=" + dt_nascimento + ", naturalidade=" + naturalidade + ", endereco=" + endereco + ", telefone=" + telefone + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai + '}';
-    }
+   // public Collection<Disciplina> getDisciplinas() {
+    //    return disciplinas;
+  //  }
+
+   // public void setDisciplinas(Collection<Disciplina> disciplinas) {
+      //  this.disciplinas = disciplinas;
+   // }
+   
 
     
-   
 }

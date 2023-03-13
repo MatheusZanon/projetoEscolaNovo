@@ -40,6 +40,17 @@
     </head>
 
     <body>
+         <main>
+            <!--Criando um cabeçalho------------------------------------------------------------------------>
+            <header class="cabecalho">
+                <div class="detalhes">
+                    <img src="imagem/language.png" alt="language" class="enfeite"/>
+
+                    <h1>Cadastro de disciplinas</h1>
+                    <img src="imagem/online-learning.png" alt="online-learning"  class="enfeite"/>
+
+                </div>
+            </header>
 
         <div class="mainWindowProfessor">
             <div class="container">
