@@ -4,6 +4,8 @@
  */
 package model.dao;
 
+import model.Disciplina;
+
 /**
  *
  * @author Roni
