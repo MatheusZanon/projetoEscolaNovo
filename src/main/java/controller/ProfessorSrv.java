@@ -59,7 +59,7 @@ public class ProfessorSrv extends HttpServlet {
                     try {
                         dao.incluir(prof);
                     } catch (Exception ex) {
-                        System.out.println(ex.getMessage() + "erroTESTETESTEFOLY");
+                        System.out.println(ex.getMessage() + "erro");
                     }
                     rd = request.getRequestDispatcher("index.html");
                     rd.forward(request, response);
@@ -69,11 +69,11 @@ public class ProfessorSrv extends HttpServlet {
                 case "pre-edicao": //faremos isso para preparar a tela de edição com os dados dos corpos celestes que queremos editar.
                     //buscar no banco de dados daquele lugar e jogar na tela
                   
-                  /*  
-                  prof = (Professores) dao.pesquisarPorId(Integer.parseInt(matriculaProfessor));
-                  rd = request.getRequestDispatcher("FormularioRegistro.jsp?acao=edicao"
                   
-                       + "&matriculaProfessor=" + Professores.getMatriculaProfessor()
+                  prof = (Professores) dao.pesquisarPorId(Integer.parseInt(id));
+                  rd = request.getRequestDispatcher("FormularioRegistroProfessor.jsp?acao=edicao"
+                  
+                       + "&id=" + prof.getId()
                             + "&nomeProfessor=" + prof.getNomeProfessor()
                             + "&dt_nascimento=" + prof.getDt_nascimento()
                             + "&naturalidade=" + prof.getNaturalidade()
@@ -83,18 +83,18 @@ public class ProfessorSrv extends HttpServlet {
                   );
                     rd.forward(request, response);
                     break;
-                 */
+               
                     
                 case "edicao":
                     
-                       prof = new Professores(nomeProfessor,dt_nascimento,naturalidade,endereco,telefone,estadoCivil);
+                    prof = new Professores(nomeProfessor,dt_nascimento,naturalidade,endereco,telefone,estadoCivil);
                     prof.setId(Integer.parseInt(id));
                     try {
                         dao.editar(prof);
                     } catch (Exception ex) {
                         System.out.println(ex.getMessage());
                     }
-                    rd = request.getRequestDispatcher("Listagem.jsp?lista=" + listagem());
+                    rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista=" + listagem());
                     rd.forward(request, response);
                     break;
                   
@@ -109,12 +109,12 @@ public class ProfessorSrv extends HttpServlet {
                   try{
                       prof = new Professores();
                       prof.setId(Integer.parseInt(id));
-                      dao.excluir(id);
+                      dao.excluir(prof);
                       
                   }catch(Exception ex){
                       System.out.println("Erro"+ ex.getMessage());
                   }
-                    rd = request.getRequestDispatcher("Listagem.jsp?lista="+listagem());
+                    rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista="+listagem());
                     rd.forward(request,response);
                     
                     

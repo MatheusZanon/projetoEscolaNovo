@@ -39,9 +39,9 @@
 
             <section class="principal">
                 <table class="tabela-alunos-cadastrados">
-                    <caption> Alunos Cadastrados </caption>
+                    <caption> Professores Cadastrados </caption>
                     <tr>
-                        <th>Nome do Aluno</th>
+                        <th>Nome do Professor</th>
                         <th>Data de Nascimento</th>
                         <th>Naturalidade</th>
                         <th>Endereço</th>
