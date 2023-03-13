@@ -75,6 +75,7 @@
 
                     <input type="submit" value="Salvar" class="btn btn-warning"/>
                     <input type="reset" value="Cancelar"  class="btn btn-danger" />
+                    <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
                     <br><br><br><br><br><br><br><br><br><br>
                 </form>
             </div>

@@ -14,14 +14,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/tabela.css">
-        
+
         <title>Alunos Registrados</title>
     </head>
     <body>
-       
-             
-        
-        <main>
+
+
+
+      
             <!--Criando um cabeçalho------------------------------------------------------------------------>
             <header class="cabecalho">
                 <div class="detalhes">
@@ -35,7 +35,7 @@
             <main class="assunto">
                 <nav class="menu">
                     <ul>
-                        <li><a href="FormularioRegistro.jsp">Formulário de Registro</a></li>  
+                        <li><a href="FormularioRegistro.jsp?acao=inclusao">Formulário de Registro</a></li>  
                         <li><a href="index.html">Tela Principal</a></li>
 
                     </ul>
@@ -43,6 +43,12 @@
             </main>
 
             <section class="principal">
+                <div class="search">
+                    <form action="CorpoCelesteSrv?acao=filtrar" method="POST">
+                        <input placeholder="Buscar" type="text" name="filtro" value="" />
+                        <button id="btnBuscar" type="submit" value="filtrar">Buscar</button>
+                    </form>
+                </div>
                 <table class="tabela-alunos-cadastrados">
                     <caption> Alunos Cadastrados </caption>
                     <tr>
@@ -64,13 +70,5 @@
 
             </section>
 
-            <main>
-                
-                <div class="search">
-            <form action="CorpoCelesteSrv?acao=filtrar" method="POST">
-                <input placeholder="Buscar" type="text" name="filtro" value="" />
-                <button id="btnBuscar" type="submit" value="filtrar">Buscar</button>
-            </form>
-        </div>
-                </body>
-                </html>
+    </body>
+</html>

@@ -45,8 +45,6 @@
             <header class="cabecalho">
                 <div class="detalhes">
                     <img src="imagem/language.png" alt="language" class="enfeite"/>
-
-                    <h1>Cadastro de disciplinas</h1>
                     <img src="imagem/online-learning.png" alt="online-learning"  class="enfeite"/>
 
                 </div>
@@ -84,8 +82,9 @@
                                     <input type="submit" class="btn btn-warning" value="Adicionar">
                                 </div>
                                 <div class="col-md-2">
-                                    <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
+                                    <input type="reset" value="Cancelar"  class="btn btn-danger" />  
                                 </div>
+                                <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
                             </div>
                         </form>
                     </div>

@@ -29,7 +29,7 @@ public class ProfessorSrv extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try {
-
+            
             String acao = request.getParameter("acao");
             String id = request.getParameter("id");
             
@@ -39,6 +39,7 @@ public class ProfessorSrv extends HttpServlet {
             String endereco = request.getParameter("endereco");
             String telefone = request.getParameter("telefone");
             String estadoCivil = request.getParameter("estadoCivil");
+            String buscarNome = request.getParameter("filtro");
            
 
             /*
@@ -130,6 +131,11 @@ public class ProfessorSrv extends HttpServlet {
                     rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista="+listagem());
                     rd.forward(request,response);
                     break;
+                    
+               case "filtrar":
+                    rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista=" + filtrar(buscarNome));
+                    rd.forward(request, response);
+                    break;
 
             }
         } catch (Exception ex) {
@@ -172,6 +178,42 @@ public class ProfessorSrv extends HttpServlet {
         }
         return listaHTML;
     }
+    
+    private String filtrar(String nome) {
+        InterfaceDao dao = new ProfessorDaoJpa();
+        List<Professores> lista = null;
+        try {
+            lista = dao.filtragem(nome);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        String listaHTML = "";
+        for (Professores professor : lista) {
+            listaHTML = listaHTML
+                    + "<tr>"
+                    + "<td>" + professor.getNomeProfessor()     + "</td>"
+                    + "<td>" + professor.getDt_nascimento()    + "</td>"
+                    + "<td>" + professor.getNaturalidade() + "</td>"
+                    + "<td>" + professor.getEndereco()     + "</td>"
+                    + "<td>" + professor.getTelefone()    + "</td>"
+                    + "<td>" + professor.getEstadoCivil()    + "</td>"
+                    + "<td><form action=ProfessorSrv?acao=pre-edicao method='POST'>"
+                    + "<input type='hidden' name='id'  value=" + 
+                        professor.getId() + "><input type='submit' value=editar>"
+                    + "</form></td>"
+                    
+                    + "<form action=ProfessorSrv?acao=exclusao method='POST'>"
+                    + "<td><input type='hidden'  name='id' value=" + 
+                        professor.getId() + "><input type='submit' value=excluir>"
+                    + "</form></td>"
+                    
+                  
+                    + "</tr>";
+        }
+        return listaHTML;
+    }
+    
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -211,5 +253,7 @@ public class ProfessorSrv extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+   
 
 }

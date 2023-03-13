@@ -110,15 +110,19 @@ public class ProfessorDaoJpa implements InterfaceDao<Professores>{
         }
         return lista;
     }
-
     
-    public List<Professores> pesquisar(String string) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
     @Override
-    public List<Professores> filtragem(String string) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public List<Professores> filtragem(String filtro) throws Exception {
+        List<Professores> lista = null;
+        EntityManager em = ConnFactory.getEntityManager();
+        try {
+            em.getTransaction().begin();
+            lista = em.createQuery("FROM Professores WHERE nomeProfessor LIKE '%" + filtro + "%'").getResultList();
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+        return lista;
     }
     
 }
