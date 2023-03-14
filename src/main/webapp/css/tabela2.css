@@ -67,7 +67,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .menu {
-    margin-top:5%;
+
     margin: 10px 200px;
     border-bottom: 1px solid #2ba9fc;
 }
@@ -91,7 +91,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .menu a:hover {
-    color: #1db95c;
+    color:#2ba9fc;
     transition: all 0.2s;
     border-bottom: white solid 0.11rem;
 }
@@ -110,13 +110,14 @@ nav ul {
 }
 
 nav ul li {
+
     display: inline-block;
     margin: 5px 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: var(--title-color-preta);
+    color: black;
     font-weight: 500;
 }
 
@@ -139,7 +140,7 @@ nav ul li a {
     border-right: 1px solid silver;
     text-transform: uppercase;
     background-color:#2ba9fc;
-    color:var(--text-color-branca);
+    color:white;
 
 }
 .tabela-alunos-cadastrados th{
@@ -149,13 +150,37 @@ nav ul li a {
     text-decoration: none;
     line-height: 1.7;
     text-transform: uppercase;
-    color: var(--title-color-preta);
+    color:black;
     letter-spacing: 0.2rem;
     font-weight: 900;
     outline: none;
     padding: 1rem 2rem;
     text-transform: uppercase;
     border-bottom: 0.5px solid silver;
+}
+
+.search1{
+    border-radius: 8px;
+    border: 2px solid #2ba9fc;
+    background-color: #2ba9fc;
+   padding: 5px 35px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+input{
+  margin: 0.6rem 0;
+    padding: 8px 25px;
+    background-color: white;
+    border-radius: 8px;
+    border: 2px solid #2ba9fc;
+   text-align: center;
+    color: #2ba9fc;
+    margin-top:5px;
+    font-size: 0.8rem;
+    margin-top:2%;
 }
 tbody{
     font-family: 'Didot', serif;

@@ -34,18 +34,18 @@
                     <ul>
                         <li><a href="FormularioRegistroProfessor.jsp?acao=inclusao">Formulário de Cadastro</a></li>  
                         <li><a href="index.html">Tela Principal</a></li>
+                        <div class="search">
+                            <form action="ProfessorSrv?acao=filtrar" method="POST" >
+                                <input  class="search_input" placeholder="Digite o nome do Professor(a)" type="text" name="filtro" value="" />
+                                <button id="btnBuscar" type="submit" value="filtrar" class="search1">Buscar</button>
+                            </form>
+                        </div>
 
                     </ul>
                 </nav>
             </main>
 
             <section class="principal">
-                <div class="search">
-                    <form action="ProfessorSrv?acao=filtrar" method="POST">
-                        <input placeholder="Digite o nome do Professor(a)" type="text" name="filtro" value="" />
-                        <button id="btnBuscar" type="submit" value="filtrar">Buscar</button>
-                    </form>
-                </div>
                 <table class="tabela-alunos-cadastrados">
                     <caption> Professores Cadastrados </caption>
                     <tr>
@@ -65,9 +65,9 @@
                 </table>
 
             </section>
-                    
-            
 
-        <main>
-    </body>
-</html>
+
+
+            <main>
+                </body>
+                </html>

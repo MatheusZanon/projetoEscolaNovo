@@ -8,15 +8,15 @@
 <!DOCTYPE html>
 <html>
     <%
-        String acaoDisciplina = request.getParameter("acaoDisciplina");
+        String acao = request.getParameter("acao");
         String id = request.getParameter("id");
-        String nome = request.getParameter("nome");
+        String nomeDisciplina = request.getParameter("nomeDisciplina");
         String periodo = request.getParameter("periodo");
         String cargaHoraria = request.getParameter("cargaHoraria");
         String descricao = request.getParameter("descricao");
 
         if (id == null) {
-            nome = "";
+            nomeDisciplina = "";
             periodo = "";
             cargaHoraria = "";
             descricao = "";
@@ -24,31 +24,56 @@
 
     %>
 
-    <head>
+   <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <title>Registro de Alunos</title>
     </head>
     <body>
-        <section class="secao-principal-cad">
-            <div class="cadastroC">
-                <h3>Cadastre Disciplina </h3>
+        <main>
+            <!--Criando um cabeçalho------------------------------------------------------------------------>
+            <header class="cabecalho">
+                <div class="detalhes">
+                    <img src="imagem/go-to-school.png" alt="language" class="enfeite"/>
 
-                
-                <form action="CorpoCelesteSrv" method="POST">
-                    <input type="hidden" name="acao" value="<%=acaoDisciplina%>" />
-                    <input type="hidden" name="id" value="<%=id %>" />
-                    <label class="lbl1">Nome da disciplina:  </label><br>
-                    <input type="text" name="nome" placeholder="Matemática" required="required" value="<%=nome%>" class="inp11"><br>
-                    <label class="lbl2">Período:  </label><br>
-                    <input type="text" name="periodo" placeholder="1°" required="required" value="<%=periodo%>" class="inp11"><br>
-                    <label class="lbl1">Carga Horária:  </label><br>
-                    <input type="text" name="cargaHoraria" placeholder="90h" required="required" value="<%=cargaHoraria%>" class="inp11"><br>
-                    <label class="lbl2">Descrição: </label><br>
-                    <input type="text" name="descricao" placeholder="MMC, MDC..." required="required" value="<%=descricao%>" class="inp11"><br>
+                    <h1>Cadastro de Disciplinas</h1>
+                    <img src="imagem/scary (1).png" alt="scary (1)" class="enfeite"/>
 
-                    <input type="submit" value="Salvar"/>
-                    <input type="reset" value="Cancelar" />
-                </form>
+                </div>
+            </header>
+            <div class="mainWindowDisciplina">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">    
+                            <form action="DisciplineSrv" method="POST">
+                                <input type="hidden" name="acao" value="<%=acao%>" />
+                                <input type="hidden" name="id" value="<%=id %>" />
+                                <p><b>Registre uma Disciplina</b></p>
+                                <label class="lbl1">Nome da disciplina:  </label><br>
+                                <input type="text" name="nomeDisciplina" placeholder="Matemática" required="required" value="<%=nomeDisciplina%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Período:  </label><br>
+                                <input type="text" name="periodo" placeholder="1°" required="required" value="<%=periodo%>" class="form-control col-md-6"><br>
+                                <label class="lbl1">Carga Horária:  </label><br>
+                                <input type="text" name="cargaHoraria" placeholder="90h" required="required" value="<%=cargaHoraria%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Descrição: </label><br>
+                                <input type="text" name="descricao" placeholder="MMC, MDC..." required="required" value="<%=descricao%>" class="form-control col-md-6"><br>
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="submit" class="btn btn-warning" value="Adicionar">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="reset" value="Cancelar"  class="btn btn-danger" />  
+                                    </div>
+                                    <a href="index.html" type="button" class="btn btn-success">Voltar</a>
+
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
     </body>
 </html>

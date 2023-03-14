@@ -34,50 +34,59 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/CadastroAluno.css">
-    <link rel="stylesheet" a href="css/tabela2.css">
         <title>Registro de Alunos</title>
     </head>
     <body>
-         <main>
+        <main>
             <!--Criando um cabeçalho------------------------------------------------------------------------>
             <header class="cabecalho">
                 <div class="detalhes">
                     <img src="imagem/go-to-school.png" alt="language" class="enfeite"/>
 
                     <h1>Cadastro de alunos</h1>
-                    <img src="imagem/online-learning.png" alt="online-learning"  class="enfeite"/>
+                    <img src="imagem/scary (1).png" alt="scary (1)" class="enfeite"/>
 
                 </div>
             </header>
-        <section class="secao-principal-cad">
-            <div class="cadastroC">
-            
-                <form action="CorpoCelesteSrv" method="POST">
-                    <br>
-                    <br>
-                    <input type="hidden" name="acao" value="<%=acao%>" />
-                    <input type="hidden" name="id" value="<%=id%>" />
-                    <label class="lbl1">Nome do aluno:  </label><br>
-                    <input type="text" name="nomeAluno" placeholder="Exemplo: Clarissa Alexandra" required="required" value="<%=nomeAluno%>" class="form-control col-md-3"><br>
-                    <label class="lbl2">Data de nascimento:  </label><br>
-                    <input type="text" name="dt_nascimento" placeholder="Exemplo: 22/01/2002" required="required" value="<%=dt_nascimento%>" class="form-control col-md-3"><br>
-                    <label class="lbl1">Naturalidade:  </label><br>
-                    <input type="text" name="naturalidade" placeholder="Exemplo: Brasileira" required="required" value="<%=naturalidade%>" class="form-control col-md-3"><br>
-                    <label class="lbl2">Endereço: </label><br>
-                    <input type="text" name="endereco" placeholder="Exemplo: Rua dos Andradas, nº 150" required="required" value="<%=endereco%>" class="form-control col-md-3"><br>
-                    <label class="lbl1">Telefone:  </label><br>
-                    <input type="text" name="telefone" placeholder="Exemplo:(22) 99685743" required="required" value="<%=telefone%>" class="form-control col-md-3"><br>
-                    <label class="lbl2">Nome da responsável(mãe): </label><br>
-                    <input type="text" name="nomeMae" placeholder="Exemplo: Minerva Alexandra Alves" required="required" value="<%=nomeMae%>" class="form-control col-md-3"><br>
-                    <label class="lbl2">Nome da responsável(pai): </label><br>
-                    <input type="text" name="nomePai" placeholder="Exemplo: Frederico Antonie German" required="required" value="<%=nomePai%>" class="form-control col-md-3"><br>
+            <div class="mainWindowProfessor">
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">    
+                            <form action="CorpoCelesteSrv" method="POST">
 
-                    <input type="submit" value="Salvar" class="btn btn-warning"/>
-                    <input type="reset" value="Cancelar"  class="btn btn-danger" />
-                    <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
-                    <br><br><br><br><br><br><br><br><br><br>
-                </form>
+                                <input type="hidden" name="acao" value="<%=acao%>" />
+                                <input type="hidden" name="id" value="<%=id%>" />
+                                <p><b>Registre um aluno</b></p>
+                                <label class="lbl1">Nome do aluno:  </label><br>
+                                <input type="text" name="nomeAluno" placeholder="Exemplo: Clarissa Alexandra" required="required" value="<%=nomeAluno%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Data de nascimento:  </label><br>
+                                <input type="text" name="dt_nascimento" placeholder="Exemplo: 22/01/2002" required="required" value="<%=dt_nascimento%>" class="form-control col-md-6"><br>
+                                <label class="lbl1">Naturalidade:  </label><br>
+                                <input type="text" name="naturalidade" placeholder="Exemplo: Brasileira" required="required" value="<%=naturalidade%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Endereço: </label><br>
+                                <input type="text" name="endereco" placeholder="Exemplo: Rua dos Andradas, nº 150" required="required" value="<%=endereco%>" class="form-control col-md-6"><br>
+                                <label class="lbl1">Telefone:  </label><br>
+                                <input type="text" name="telefone" placeholder="Exemplo:(22) 99685743" required="required" value="<%=telefone%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Nome da responsável (mãe): </label><br>
+                                <input type="text" name="nomeMae" placeholder="Exemplo: Minerva Alexandra Alves" required="required" value="<%=nomeMae%>" class="form-control col-md-6"><br>
+                                <label class="lbl2">Nome da responsável (pai): </label><br>
+                                <input type="text" name="nomePai" placeholder="Exemplo: Frederico Antonie German" required="required" value="<%=nomePai%>" class="form-control col-md-6"><br>
+
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <input type="submit" class="btn btn-warning" value="Adicionar">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="reset" value="Cancelar"  class="btn btn-danger" />  
+                                    </div>
+                                    <a href="index.html" type="button" class="btn btn-success">Voltar</a>
+
+                                </div> 
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
     </body>
 </html>

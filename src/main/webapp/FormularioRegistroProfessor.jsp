@@ -44,11 +44,13 @@
             <!--Criando um cabeçalho------------------------------------------------------------------------>
             <header class="cabecalho">
                 <div class="detalhes">
-                    <img src="imagem/language.png" alt="language" class="enfeite"/>
-                    <img src="imagem/online-learning.png" alt="online-learning"  class="enfeite"/>
+                    <img src="imagem/teacher.png" alt="teacher" class="enfeite"/>
+                    <h1>Cadastro de professor</h1>
+                    <img src="imagem/language.png" alt="language" class="enfeite"/> 
 
                 </div>
             </header>
+            <!-- Fim do cabeçalho -->
 
         <div class="mainWindowProfessor">
             <div class="container">
@@ -57,7 +59,8 @@
                         <form action="ProfessorSrv" method="POST">
                             <input type="hidden" name="acao" value="<%=acao %>"/>
                             <input type="hidden" name="id" value="<%=id %>" />
-                            <p><b>Cadastro de Professor</b></p><br>
+                            <p><b>Registre um professor:</b></p>
+                           
                             <label>Nome do Professor:</label>
                             <input type="text" name="nomeProfessor" class="form-control col-md-3" value="<%=nomeProfessor%>" >
 
@@ -75,6 +78,7 @@
 
                             <label>Estado Civil:</label>
                             <input type="text" name="estadoCivil" class="form-control col-md-3" value="<%=estadoCivil%>">
+                 
 
                             <br>
                             <div class="row">
@@ -84,13 +88,15 @@
                                 <div class="col-md-2">
                                     <input type="reset" value="Cancelar"  class="btn btn-danger" />  
                                 </div>
-                                <a href="index.html" type="button" class="btn btn-danger">Voltar</a>
-                            </div>
+                                <a href="index.html" type="button" class="btn btn-success">Voltar</a>
+                                
+                            </div> 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+                           
 
 
 

@@ -103,7 +103,7 @@ public class DisciplinaDaoJpa implements InterfaceDao<Disciplina>{
         List<Disciplina> lista = null;
         try{
             em.getTransaction().begin();
-             lista = em.createQuery("FROM Professores prof").getResultList();
+             lista = em.createQuery("FROM Disciplina disc").getResultList();
             em.getTransaction().commit();
         } finally{
             em.close();
@@ -117,7 +117,7 @@ public class DisciplinaDaoJpa implements InterfaceDao<Disciplina>{
         EntityManager em = ConnFactory.getEntityManager();
         try {
             em.getTransaction().begin();
-            lista = em.createQuery("FROM Professores WHERE nomeProfessor LIKE '%" + filtro + "%'").getResultList();
+            lista = em.createQuery("FROM Disciplina WHERE nomeDisciplina LIKE '%" + filtro + "%'").getResultList();
             em.getTransaction().commit();
         } finally {
             em.close();

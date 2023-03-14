@@ -1,7 +1,7 @@
 <%-- 
-    Document   : Listagem
-    Created on : 12 de mar. de 2023, 16:59:09
-    Author     : joaop
+    Document   : ListagemDisciplina
+    Created on : 14 de mar. de 2023, 12:30:51
+    Author     : Matheus
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/tabela.css">
 
-        <title>Alunos Registrados</title>
+        <title>Disciplinas Cadastradas</title>
     </head>
     <body>
 
@@ -26,7 +26,7 @@
             <header class="cabecalho">
                 <div class="detalhes">
                     <img src="imagem/graduation.png" alt="graduation" class="enfeite"/>
-                    <h1>Alunos cadastrados</h1>
+                    <h1>Disciplinas cadastradas</h1>
                     <img src="imagem/report.png" alt="report" class="enfeite"/>
 
                 </div>
@@ -35,11 +35,11 @@
                 <main class="assunto">
                 <nav class="menu">
                     <ul>
-                        <li><a href="FormularioRegistro.jsp?acao=inclusao">Formulário de Cadastro</a></li>  
+                        <li><a href="FormularioRegistroDisciplina.jsp?acao=inclusao">Formulário de Cadastro</a></li>  
                         <li><a href="index.html">Tela Principal</a></li>
                         <div class="search">
-                            <form action="CorpoCelesteSrv?acao=filtrar" method="POST" >
-                                <input  class="search_input" placeholder="Digite o nome do Aluno" type="text" name="filtro" value="" />
+                            <form action="DisciplineSrv?acao=filtrar" method="POST" >
+                                <input  class="search_input" placeholder="Digite o nome da Disciplina" type="text" name="filtro" value="" />
                                 <button id="btnBuscar" type="submit" value="filtrar" class="search1">Buscar</button>
                             </form>
                         </div>
@@ -54,14 +54,10 @@
                 <table class="tabela-alunos-cadastrados">
                     <caption> Alunos Cadastrados </caption>
                     <tr>
-                        <th>Nome do Aluno</th>
-                        <th>Data de Nascimento</th>
-                        <th>Naturalidade</th>
-                        <th>Endereço</th>
-                        <th>Telefone</th>
-                        <th>Nome da mãe</th>
-                        <th>Nome do pai </th>
-
+                        <th>Nome da Disciplina</th>
+                        <th>Periodo</th>
+                        <th>Carga Horária</th>
+                        <th>Descrição</th>
                     </tr>
 
                     <tbody> 

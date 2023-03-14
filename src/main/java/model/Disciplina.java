@@ -1,14 +1,11 @@
 package model;
 
-import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -39,17 +36,12 @@ public class Disciplina {
         
     }
     
-    public Disciplina(String nome, String periodo, String cargaHoraria, String descricao, Collection<Registros> alunos) {
+    public Disciplina(String nomeDisciplina, String periodo, String cargaHoraria, String descricao) {
         this.nomeDisciplina = nomeDisciplina;
         this.periodo = periodo;
         this.cargaHoraria = cargaHoraria;
         this.descricao = descricao;
-        this.alunos = alunos;
     }
-    
-    @ManyToMany
-    @JoinTable ( name =" Disciplina_Aluno ", joinColumns = @JoinColumn ( name =" Disciplinas_Id "), inverseJoinColumns = @JoinColumn ( name =" Registros_Id ") )
-    private Collection<Registros> alunos;
 
     public int getId() {
         return id;
@@ -59,11 +51,11 @@ public class Disciplina {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getNomeDisciplina() {
         return nomeDisciplina;
     }
 
-    public void setNome(String nomeDisciplina) {
+    public void setNomeDisciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
     }
 
@@ -91,17 +83,10 @@ public class Disciplina {
         this.descricao = descricao;
     }
 
-    public Collection<Registros> getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(Collection<Registros> alunos) {
-        this.alunos = alunos;
-    }
 
     @Override
     public String toString() {
-        return "Disciplina{" + "id=" + id + ", nomeDisciplina=" + nomeDisciplina + ", periodo=" + periodo + ", cargaHoraria=" + cargaHoraria + ", descricao=" + descricao + ", alunos=" + alunos + '}';
+        return "Disciplina{" + "id=" + id + ", nomeDisciplina=" + nomeDisciplina + ", periodo=" + periodo + ", cargaHoraria=" + cargaHoraria + ", descricao=" + descricao + '}';
     }
      
 }
