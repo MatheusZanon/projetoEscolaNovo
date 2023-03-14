@@ -34,8 +34,11 @@ public class Professores {
     @Column(length = 130, nullable = false)
     private String estadoCivil;
 
-
-   
+    /*
+    @OneToMany(mappedBy = "professores", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private Set<Disciplina> disciplinas;
+    */
 
     public Professores() {
     }

@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table ( name = " disciplinas ")
 public class Disciplina {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -31,6 +32,11 @@ public class Disciplina {
     
     @Column(length = 240, nullable = false)
     private String descricao;
+
+    /*
+    @ManyToOne(optional = true)
+    @JoinColumn(name = "professor_id")
+    */
 
     public Disciplina() {
         
