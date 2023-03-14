@@ -16,6 +16,10 @@
         <servlet-name>DisciplinasSrv</servlet-name>
         <servlet-class>controller.DisciplinasSrv</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DisciplineSrv</servlet-name>
+        <servlet-class>controller.DisciplineSrv</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CorpoCelesteSrv</servlet-name>
         <url-pattern>/CorpoCelesteSrv</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>DisciplinasSrv</servlet-name>
         <url-pattern>/DisciplinasSrv</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisciplineSrv</servlet-name>
+        <url-pattern>/DisciplineSrv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
