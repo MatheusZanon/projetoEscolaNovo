@@ -62,24 +62,30 @@
                             <p><b>Registre um professor:</b></p>
                            
                             <label>Nome do Professor:</label>
-                            <input type="text" name="nomeProfessor" class="form-control col-md-3" value="<%=nomeProfessor%>" >
+                            <input type="text" name="nomeProfessor" class="form-control col-md-5" value="<%=nomeProfessor%>" >
 
                             <label>Data de Nascimento:</label>
-                            <input type="text" name="dt_nascimento" class="form-control col-md-3" value="<%=dt_nascimento%>">
+                            <input type="text" name="dt_nascimento" class="form-control col-md-5" value="<%=dt_nascimento%>">
 
                             <label>Naturalidade:</label>
-                            <input type="text" name="naturalidade" class="form-control col-md-3" value="<%=naturalidade%>">
+                            <input type="text" name="naturalidade" class="form-control col-md-5" value="<%=naturalidade%>">
 
                             <label>Endereço:</label>
-                            <input type="text" name="endereco" class="form-control col-md-3" value="<%=endereco%>">
+                            <input type="text" name="endereco" class="form-control col-md-5" value="<%=endereco%>">
 
                             <label>Telefone de Contato: </label>
-                            <input type="text" name="telefone" class="form-control col-md-3" value="<%=telefone%>">
+                            <input type="text" name="telefone" class="form-control col-md-5" value="<%=telefone%>">
 
                             <label>Estado Civil:</label>
-                            <input type="text" name="estadoCivil" class="form-control col-md-3" value="<%=estadoCivil%>">
+                            <input type="text" name="estadoCivil" class="form-control col-md-5" value="<%=estadoCivil%>"><br>
                  
-
+                            <label>Qual a matéria lecionada?</label>
+                            <select class="simple basic form-control col-md-3">
+                                <option value="matematica">Matematica</option>
+                                <option value="portugues">Portugues</option>
+                                <option value="geografia">Geografia</option>
+                            </select>
+                            
                             <br>
                             <div class="row">
                                 <div class="col-md-2">
