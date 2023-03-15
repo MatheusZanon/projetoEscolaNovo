@@ -13,8 +13,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Disciplina;
 import model.Professores;
 import model.dao.DaoFactory;
+import model.dao.DisciplinaDaoJpa;
 import model.dao.InterfaceDao;
 import model.dao.ProfessorDaoJpa;
 
@@ -39,6 +41,7 @@ public class ProfessorSrv extends HttpServlet {
             String endereco = request.getParameter("endereco");
             String telefone = request.getParameter("telefone");
             String estadoCivil = request.getParameter("estadoCivil");
+            String disciplina = request.getParameter("disciplina");
             String buscarNome = request.getParameter("filtro");
            
 
@@ -56,7 +59,8 @@ public class ProfessorSrv extends HttpServlet {
                     pegamos o processo e mandamos para o index.html ->   rd = request.getRequestDispatcher("index.html");
                     rd.forward(request, response);
                     */
-                      prof = new Professores(nomeProfessor, dt_nascimento, naturalidade, endereco, telefone, estadoCivil);
+                      prof = new Professores(nomeProfessor, dt_nascimento, naturalidade, endereco, telefone, estadoCivil, disciplina);
+                      System.out.println("TESTE");
                     try {
                         dao.incluir(prof);
                     } catch (Exception ex) {
@@ -81,6 +85,7 @@ public class ProfessorSrv extends HttpServlet {
                               + "&endereco=" + prof.getEndereco()
                             + "&telefone=" + prof.getTelefone()   
                             + "&estadoCivil=" + prof.getEstadoCivil() 
+                            + "&disciplina=" + prof.getDisciplina()
                   );
                     rd.forward(request, response);
                     break;
@@ -88,7 +93,7 @@ public class ProfessorSrv extends HttpServlet {
                     
                 case "edicao":
                     
-                    prof = new Professores(nomeProfessor,dt_nascimento,naturalidade,endereco,telefone,estadoCivil);
+                    prof = new Professores(nomeProfessor,dt_nascimento,naturalidade,endereco,telefone,estadoCivil, disciplina);
                     prof.setId(Integer.parseInt(id));
                     try {
                         dao.editar(prof);
@@ -131,6 +136,17 @@ public class ProfessorSrv extends HttpServlet {
                     rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista="+listagem());
                     rd.forward(request,response);
                     break;
+                          
+                case "listagemDisciplinas":
+                    
+                    /*
+                    O que fizemos? Simplismente estamos dizendopara onde queremos ir, e estamos passandocomo parametro a list
+                    o método listagem retorna essa lista em formato de tabela html e ele vai ser passado via get
+                    no parametro lista ali
+                    */
+                    rd = request.getRequestDispatcher("FormularioRegistroProfessor.jsp?listagemDisciplinas="+listagemDisciplina());
+                    rd.forward(request,response);
+                    break;
                     
                case "filtrar":
                     rd = request.getRequestDispatcher("ListagemProfessor.jsp?lista=" + filtrar(buscarNome));
@@ -163,6 +179,7 @@ public class ProfessorSrv extends HttpServlet {
                     + "<td>" + professor.getEndereco()     + "</td>"
                     + "<td>" + professor.getTelefone()    + "</td>"
                     + "<td>" + professor.getEstadoCivil()    + "</td>"
+                    + "<td>" + professor.getDisciplina()    + "</td>"
                     + "<td><form action=ProfessorSrv?acao=pre-edicao method='POST'>"
                     + "<input type='hidden' name='id'  value=" + 
                         professor.getId() + "><input type='submit' value=editar>"
@@ -197,6 +214,7 @@ public class ProfessorSrv extends HttpServlet {
                     + "<td>" + professor.getEndereco()     + "</td>"
                     + "<td>" + professor.getTelefone()    + "</td>"
                     + "<td>" + professor.getEstadoCivil()    + "</td>"
+                    + "<td>" + professor.getDisciplina()    + "</td>"
                     + "<td><form action=ProfessorSrv?acao=pre-edicao method='POST'>"
                     + "<input type='hidden' name='id'  value=" + 
                         professor.getId() + "><input type='submit' value=editar>"
@@ -214,6 +232,22 @@ public class ProfessorSrv extends HttpServlet {
     }
     
     
+    private String listagemDisciplina() {
+        InterfaceDao dao = new DisciplinaDaoJpa();
+        List<Disciplina> lista = null;
+        try {
+            lista = dao.listar();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        String listaHTML = "";
+        for (Disciplina disciplina : lista) {
+            listaHTML = listaHTML +
+                    "<option>" + disciplina.getNomeDisciplina() + "</option>";
+        }
+        //System.out.println(listaHTML);
+        return listaHTML;
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

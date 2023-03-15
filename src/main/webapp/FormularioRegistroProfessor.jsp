@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <% 
     String acao = request.getParameter("acao");
+    String listagemDisciplinas = request.getParameter("listagemDisciplinas");
+    //System.out.println("chegou isso: " + listagemDisciplinas);
    
     String id = request.getParameter("id");
     String nomeProfessor = request.getParameter("nomeProfessor");
@@ -17,6 +19,7 @@
     String endereco = request.getParameter("endereco");
     String telefone = request.getParameter("telefone");
     String estadoCivil = request.getParameter("estadoCivil");
+ 
 
     if (id == null) {
             nomeProfessor = "";
@@ -56,7 +59,7 @@
             <div class="container">
                 <div class="card">
                     <div class="card-body">    
-                        <form action="ProfessorSrv" method="POST">
+                        <form action="ProfessorSrv?acao=inclusao" method="POST">
                             <input type="hidden" name="acao" value="<%=acao %>"/>
                             <input type="hidden" name="id" value="<%=id %>" />
                             <p><b>Registre um professor:</b></p>
@@ -80,10 +83,8 @@
                             <input type="text" name="estadoCivil" class="form-control col-md-5" value="<%=estadoCivil%>"><br>
                  
                             <label>Qual a matéria lecionada?</label>
-                            <select class="simple basic form-control col-md-3">
-                                <option value="matematica">Matematica</option>
-                                <option value="portugues">Portugues</option>
-                                <option value="geografia">Geografia</option>
+                            <select name="disciplina" class="form-control col-md-3">
+                                <%=listagemDisciplinas %>
                             </select>
                             
                             <br>

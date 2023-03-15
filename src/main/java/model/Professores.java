@@ -33,6 +33,9 @@ public class Professores {
     private String telefone;
     @Column(length = 130, nullable = false)
     private String estadoCivil;
+    @Column(length = 130, nullable = false)
+    private String disciplina;
+    
 
     /*
     @OneToMany(mappedBy = "professores", fetch = FetchType.LAZY,
@@ -43,13 +46,14 @@ public class Professores {
     public Professores() {
     }
 
-    public Professores(String nomeProfessor, String dt_nascimento, String naturalidade, String endereco, String telefone, String estadoCivil) {
+    public Professores(String nomeProfessor, String dt_nascimento, String naturalidade, String endereco, String telefone, String estadoCivil, String disciplina) {
         this.nomeProfessor = nomeProfessor;
         this.dt_nascimento = dt_nascimento;
         this.naturalidade = naturalidade;
         this.endereco = endereco;
         this.telefone = telefone;
         this.estadoCivil = estadoCivil;
+        this.disciplina = disciplina;
     }
 
     public int getId() {
@@ -107,10 +111,18 @@ public class Professores {
     public void setEstadoCivil(String estadoCivil) {
         this.estadoCivil = estadoCivil;
     }
+    
+    public String getDisciplina(){
+        return disciplina; 
+    }
 
+    public void setDisciplina(String disciplina) {
+        this.disciplina = disciplina;
+    }
+    
     @Override
     public String toString() {
-        return "Professores{" + "id=" + id + ", nomeProfessor=" + nomeProfessor + ", dt_nascimento=" + dt_nascimento + ", naturalidade=" + naturalidade + ", endereco=" + endereco + ", telefone=" + telefone + "estadoCivil=" + estadoCivil + '}';
+        return "Professores{" + "id=" + id + ", nomeProfessor=" + nomeProfessor + ", dt_nascimento=" + dt_nascimento + ", naturalidade=" + naturalidade + ", endereco=" + endereco + ", telefone=" + telefone + "estadoCivil=" + estadoCivil + "disciplina=" + disciplina + '}';
     }  
    
 }

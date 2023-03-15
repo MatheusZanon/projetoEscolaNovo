@@ -55,6 +55,7 @@
                         <th>Endereço</th>
                         <th>Telefone</th>
                         <th>Estado Civil</th>
+                        <th>Disciplina</th>
 
                     </tr>
 

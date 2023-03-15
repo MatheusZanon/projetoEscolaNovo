@@ -14,7 +14,6 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table ( name = " disciplinas ")
 public class Disciplina {
     
     @Id
